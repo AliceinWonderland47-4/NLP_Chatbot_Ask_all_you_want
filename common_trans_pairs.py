@@ -30,4 +30,15 @@ s_tell.encode('utf-8')
 s_joke = "笑话"
 s_joke.encode('utf-8')
 
+s_interesting = "有趣的"
+s_interesting.encode('utf-8')
+
+s_scary = "恐怖的"
+s_scary.encode('utf-8')
+
+s_story = "故事"
+s_story.encode('utf-8')
+
+
+
 
