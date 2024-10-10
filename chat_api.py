@@ -5,10 +5,14 @@ chat_api.py
 """
 
 # 导入相关模块 Import related modules
+# NLTK自然语言处理库 NLTK Natural Language Processing Library
 import nltk
+# 5种功能模式 5 function modes
 from greeting_bot import *
 from chitchat_bot import *
 from professional_bot import *
+from nonsense_bot import *
+from singsong_bot import *
 
 # Download the punkt tokenizer if you haven't already
 nltk.download('punkt')
@@ -22,14 +26,19 @@ def chatbot_start():
           "What do you want to do today?\n"
           "今天想做些什么呢？\n"
           "To enter Greeting mode, press the G/g key.\n"
-          "进入问候模式，请按G/g键\n"
+          "要进入问候模式，请按G/g键\n"
           "To enter Chitchat mode, press the C/c key.\n"
-          "进入闲聊模式，请按C/c键\n"
+          "要进入闲聊模式，请按C/c键\n"
+          "To enter Singsong mode, press the S/s key.\n"
+          "要进入歌唱家模式，请按S/s键\n"
           "To enter Professional mode, press the P/p key\n"
-          "进入专业模式，请按P/p键\n"
+          "要进入专业模式，请按P/p键\n"
+          "Furthermore, if you want to hear some gibberish, press the N/n key\n"
+          "此外，想听点胡言乱语，请按N/n键\n"
           "Type 'quit' to exit\n"
           "打出 'quit' 或“退出”来退出")
 
+    # 获取键盘输入 Get keyboard input
     key = input()
     if key == 'G' or key == 'g':
         print("You are now in greeting mode.\n"
@@ -40,13 +49,30 @@ def chatbot_start():
 
     elif key == 'C' or key == 'c':
         print("You are now in chitchat mode.\n"
-              "您已进入闲聊模式。")
+              "您已进入闲聊模式。\n"
+              "In chitchat mode, I can talk to you about interesting topics, such as telling jokes, stories, etc.\n"
+              "在闲聊模式下，我可以和你聊点有趣的话题，比方说讲笑话、讲故事等等。")
         chatbot_C.converse()
 
     elif key == 'P' or key == 'p':
         print("You are now in professional mode.\n"
-              "您已进入专业模式。")
+              "您已进入专业模式。\n"
+              "In professional mode, I can answer your questions about computer terminology, \n"
+              "recite the periodic table, calculate pi, and more.\n"
+              "在专业模式下，我可以为你解答有关计算机专业名词的问题，背诵元素周期表，计算圆周率（pi）等等。")
         chatbot_P.converse()
+
+    elif key == 'N' or key == 'n':
+        print("You are now in nonsense mode.\n"
+              "您已进入胡言乱语模式。\n"
+              "Mi vdfgdfhtf zrhc, n sgs awcefcz s zwzsf rgzSAFs gz zsdfz zsdf zs yui,otuyftd sevabb.\n"
+              "瞹澀奪祓瀔鹖佶，筐囖蓻釁湹悑腝玟。")
+        chatbot_N.converse()
+
+    elif key == 'S' or key == 's':
+        print("You are now in singsong mode.\n"
+              "您已进入歌唱家模式。")
+        chatbot_S.converse()
 
     else:
         print("Sorry, please try again.\n"
