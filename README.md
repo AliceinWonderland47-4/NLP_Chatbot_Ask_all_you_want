@@ -10,6 +10,17 @@
 
 ------ 主要实现原理 Main implementation principle ------
 
+------ 主要功能介绍 Main functions ------
+
+1、问候模式 Greeting mode
+
+2、闲聊模式 Chitchat mode
+
+3、歌唱家模式 Singsong mode
+
+4、专业模式 Professional mode
+
+5、胡言乱语模式 Nonsense mode
 
 ------ 项目文件结构 Project file structure ------
 
