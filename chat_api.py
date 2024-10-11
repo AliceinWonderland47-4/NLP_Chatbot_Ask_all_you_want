@@ -35,6 +35,8 @@ def chatbot_start():
           "要进入专业模式，请按P/p键\n"
           "Furthermore, if you want to hear some gibberish, press the N/n key\n"
           "此外，想听点胡言乱语，请按N/n键\n"
+          "Toad of truth, press the E/e key\n"
+          "O-O，请按E/e键\n"
           "Type 'quit' to exit\n"
           "打出 'quit' 或“退出”来退出")
 
@@ -51,7 +53,7 @@ def chatbot_start():
         print("You are now in chitchat mode.\n"
               "您已进入闲聊模式。\n"
               "In chitchat mode, I can talk to you about interesting topics, such as telling jokes, stories, etc.\n"
-              "在闲聊模式下，我可以和你聊点有趣的话题，比方说讲笑话、讲故事等等。")
+              "在闲聊模式下，我可以和你聊点有趣的话题，比方说讲笑话、讲故事、等等。")
         chatbot_C.converse()
 
     elif key == 'P' or key == 'p':
@@ -71,8 +73,16 @@ def chatbot_start():
 
     elif key == 'S' or key == 's':
         print("You are now in singsong mode.\n"
-              "您已进入歌唱家模式。")
+              "您已进入歌唱家模式。\n"
+              "In singsong mode, you can click on a favorite song and I will sing it for you.\n"
+              "在歌唱家模式下，你可以点一首喜爱的歌曲，我会唱给你听。")
         chatbot_S.converse()
+
+    elif key == 'E' or key == 'e':
+        print("You've entered ELDER care mode.\n"
+              "您已进入长者关怀模式。\n"
+              "O-O O-O O-O O-O\n"
+              " =   =   =   = ")
 
     else:
         print("Sorry, please try again.\n"
