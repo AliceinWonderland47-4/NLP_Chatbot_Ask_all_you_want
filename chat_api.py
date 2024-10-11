@@ -7,12 +7,13 @@ chat_api.py
 # 导入相关模块 Import related modules
 # NLTK自然语言处理库 NLTK Natural Language Processing Library
 import nltk
-# 5种功能模式 5 function modes
+# 6种功能模式 6 function modes
 from greeting_bot import *
 from chitchat_bot import *
 from professional_bot import *
 from nonsense_bot import *
 from singsong_bot import *
+from elderly_bot import *
 
 # Download the punkt tokenizer if you haven't already
 nltk.download('punkt')
@@ -83,6 +84,7 @@ def chatbot_start():
               "您已进入长者关怀模式。\n"
               "O-O O-O O-O O-O\n"
               " =   =   =   = ")
+        chatbot_E.converse()
 
     else:
         print("Sorry, please try again.\n"
