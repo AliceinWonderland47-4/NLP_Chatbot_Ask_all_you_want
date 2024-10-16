@@ -39,6 +39,45 @@ s_scary.encode('utf-8')
 s_story = "故事"
 s_story.encode('utf-8')
 
+s_dave = "歪比巴布"
+s_dave.encode('utf-8')
 
+s_con = "概念"
+s_con.encode('utf-8')
 
+s_fun = "职能"
+s_fun.encode('utf-8')
+
+s_char = "特性"
+s_char.encode('utf-8')
+
+s_theo = "理论"
+s_theo.encode('utf-8')
+
+s_ggcf = "改革春风吹满地"
+s_ggcf.encode('utf-8')
+
+s_dec = "决策"
+s_dec.encode('utf-8')
+
+s_met = "方法"
+s_met.encode('utf-8')
+
+s_plan = "计划"
+s_plan.encode('utf-8')
+
+s_for = "公式"
+s_for.encode('utf-8')
+
+s_func = "函数"
+s_func.encode('utf-8')
+
+s_org = "组织"
+s_org.encode('utf-8')
+
+s_str = "结构"
+s_str.encode('utf-8')
+
+s_lead = "领导"
+s_lead.encode('utf-8')
 
