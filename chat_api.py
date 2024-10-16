@@ -25,7 +25,9 @@ from nonsense_bot import *
 from singsong_bot import *
 from singsong_bot_gui import *
 from elderly_bot import *
+# 新闻模式
 from news_bot import *
+from news_bot_gui import *
 
 # 字典
 from dic_1 import *
@@ -50,15 +52,15 @@ def chatbot_start():
           "4. To enter 'Professional' mode, press the P/p key\n"
           "4. 要进入 专业模式，请按P/p键\n"
           "5. To enter 'Beijing Dialect' mode, press the B/b key\n"
-          "5. 要进入北京话模式，请按B/b键\n"
-          "To enter the naming assistant mode, press the T/t key\n"
-          "要进入起名助手模式，请按T/t键\n"
-          "To enter the News Enquiries mode, press the W/w key\n"
-          "要进入新闻查询模式，请按W/w键\n"
-          "Furthermore, if you want to hear some gibberish, press the N/n key\n"
-          "此外，想听点胡言乱语，请按N/n键\n"
-          "Toad of truth, press the E/e key\n"
-          "O-O，请按E/e键\n"
+          "5. 要进入 北京话模式，请按B/b键\n"
+          "6. To enter the naming assistant mode, press the T/t key\n"
+          "6. 要进入 起名助手模式，请按T/t键\n"
+          "7. To enter the News Enquiries mode, press the W/w key\n"
+          "7. 要进入 新闻查询模式，请按W/w键\n"
+          "8. Furthermore, if you want to hear some gibberish, press the N/n key\n"
+          "8. 此外，想听点胡言乱语，请按N/n键\n"
+          "9. Toad of truth, press the E/e key\n"
+          "9. O-O，请按E/e键\n"
           "Type 'quit' to exit\n"
           "打出 'quit' 或“退出”来退出")
 
@@ -107,12 +109,16 @@ def chatbot_start():
               "To learn about domestic hot news, please press the D/d key.\n"
               "了解国内热点新闻，请按D/d键。\n"
               "To learn about international hot news, please press the I/i key.\n"
-              "了解国外热点新闻，请按I/i键。")
+              "了解国际热点新闻，请按I/i键。")
         key = input()
         if key == 'D' or key == 'd':
-            chatbot_Nd.converse()
+            # chatbot_Nd.converse()  # 旧版本，纯终端输入/输出 Old version, pure terminal input/output
+            print("请留意弹出的窗口。Please pay attention to the pop-up window.")
+            dom_news_bot_start()  # 新版本，增加了GUI New version, added GUI
         elif key == 'I' or key == 'i':
-            chatbot_Ni.converse()
+            # chatbot_Ni.converse()  # 旧版本，纯终端输入/输出 Old version, pure terminal input/output
+            print("请留意弹出的窗口。Please pay attention to the pop-up window.")
+            int_news_bot_start()  # 新版本，增加了GUI New version, added GUI
 
     # C键：闲聊模式 chitchat mode
     elif key == 'C' or key == 'c':

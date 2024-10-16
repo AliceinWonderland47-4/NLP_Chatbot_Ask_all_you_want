@@ -35,3 +35,10 @@ s_flex.encode('utf-8')
 
 s_req = "需求"
 s_req.encode('utf-8')
+
+s_cb = "中央银行"
+s_cb.encode('utf-8')
+
+s_eco = "经济学"
+s_eco.encode('utf-8')
+

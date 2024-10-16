@@ -17,6 +17,12 @@ from PyQt5 import QtGui
 # 国内新闻 Domestic News
 pairs_news_dom = [
     [
+        "2024/03/03",
+        ["2024年3月3日，2024跳水世界杯蒙特利尔站比赛在加拿大蒙特利尔奥林匹克中心游泳馆落幕。\n"
+         "中国跳水‘梦之队’包揽全部金牌，以9金、1银、2铜的成绩位列奖牌榜第一。\n"
+         ""]
+    ],
+    [
         "2024/04/01",
         ["4月1日，国家重点能源项目——青海玛尔挡水电站正式发电。玛尔挡水电站位于青海果洛藏族自治州玛沁县拉加镇，\n"
          "总装机容量232万千瓦，是黄河流域海拔最高、在建装机容量最大的水电站。\n"
@@ -25,10 +31,22 @@ pairs_news_dom = [
          "in Lajia Town, Maqin County, Golog Tibetan Autonomous Prefecture, Qinghai Province.\n"
          "With a total installed capacity of 2.32 million kilowatts, it is the highest-altitude\n"
          "hydropower station in the Yellow River Basin and the largest hydropower station under construction."]
+    ],
+    [
+        "2024/04/09",
+        [
+            "4月9日，由中国科学院深圳先进技术研究院和广州能源研究所共同主办的新型波浪能海洋生态监测浮标\n"
+            "‘合作者号’启用仪式在深圳举行，我国自主研发的波浪能海洋生态监测浮标研发测试平台正式投入使用。\n"
+            "On April 9, the launching ceremony of the new wave energy marine ecological monitoring buoy \n"
+            "‘Cooperator’, co-organized by the Shenzhen Institutes of Advanced Technology of the Chinese Academy of \n"
+            "Sciences and the Guangzhou Institute of Energy Conversion, was held in Shenzhen. my country’s \n"
+            "independently developed wave energy marine ecological monitoring buoy R&D and testing platform was \n"
+            "officially put into use. "
+        ]
     ]
 ]
 
-# 国际新闻
+# 国际新闻 International News
 pairs_news_int = [
     [
         "2024/04/01",
@@ -39,6 +57,13 @@ pairs_news_int = [
          "The key to the valuable achievements in China-Indonesia relations lies in\n"
          "adhering to strategic autonomy, mutual trust and mutual assistance, win-win\n"
          "cooperation, and fairness and justice."]
+    ],
+    [
+        "2024/04/06",
+        ["俄罗斯‘联盟MS-24’载人飞船搭载3名宇航员从国际空间站返回地球，4月6日在哈萨克斯坦境内草原上安全着陆。\n"
+         "Russia's Soyuz MS-24 manned spacecraft carrying three astronauts returned to\n"
+         "Earth from the International Space Station and landed safely on the grasslands\n"
+         "in Kazakhstan on April 6."]
     ]
 ]
 
@@ -65,7 +90,9 @@ class ChatbotApp_D(QWidget):
         self.chat_area.setText(
             "I provide you with the latest domestic current affairs news.\n"
             "Just enter the date (format: YYYY/MM/DD) to search.\n"
-            "我为您提供最新的国内时事新闻，输入日期（格式：YYYY/MM/DD）即可查询。\n")
+            "我为您提供最新的国内时事新闻，输入日期（格式：YYYY/MM/DD）即可查询。\n"
+            "Example: Enter 2024/04/01 in the blank box below and click the 'Send' button.\n"
+            "使用示例：在下方的空白框中输入2024/04/01，然后点击‘发送’按钮。")
         self.layout.addWidget(self.chat_area)
 
         self.input_area = QTextEdit(self)
@@ -82,10 +109,11 @@ class ChatbotApp_D(QWidget):
         if user_input:
             self.chat_area.append("You （用户）: " + user_input)
             response = chatbot_Nd.respond(user_input)
-            self.chat_area.append("Bot （国内新闻聊天机器人）: " + response)
+            self.chat_area.append("Bot （国内新闻聊天机器人）: \n" + response)
             self.input_area.clear()
 
 
+# 国际新闻
 class ChatbotApp_I(QWidget):
     def __init__(self):
         super().__init__()
@@ -93,7 +121,7 @@ class ChatbotApp_I(QWidget):
         font = QtGui.QFont()
         font.setFamily("Arial")  # 括号里可以设置成自己想要的其它字体
         font.setPointSize(18)  # 括号里的数字可以设置成自己想要的字体大小
-        self.setWindowTitle("Chatbot(Domestic News)")
+        self.setWindowTitle("Chatbot(International News)")
         self.setGeometry(100, 100, 400, 300)
         # self.setFont()
         # self.font().Bold()
@@ -102,8 +130,11 @@ class ChatbotApp_I(QWidget):
         self.chat_area = QTextEdit(self)
         self.chat_area.setReadOnly(True)
         self.chat_area.setText(
-            "In chitchat mode, I can talk to you about interesting topics, such as telling jokes, stories, etc.\n"
-            "在闲聊模式下，我可以和你聊点有趣的话题，比方说讲笑话、讲故事、等等。\n")
+            "I provide you with the latest international current affairs news.\n"
+            "Just enter the date (format: YYYY/MM/DD) to search.\n"
+            "我为您提供最新的国际时事新闻，输入日期（格式：YYYY/MM/DD）即可查询。\n"
+            "Example: Enter 2024/04/01 in the blank box below and click the 'Send' button.\n"
+            "使用示例：在下方的空白框中输入2024/04/01，然后点击‘发送’按钮。\n")
         self.layout.addWidget(self.chat_area)
 
         self.input_area = QTextEdit(self)
@@ -120,7 +151,7 @@ class ChatbotApp_I(QWidget):
         if user_input:
             self.chat_area.append("You （用户）: " + user_input)
             response = chatbot_Ni.respond(user_input)
-            self.chat_area.append("Chitchat Bot （闲聊模式聊天机器人）: " + response)
+            self.chat_area.append("News Bot （国际新闻模式聊天机器人）: \n" + response)
             self.input_area.clear()
 
 

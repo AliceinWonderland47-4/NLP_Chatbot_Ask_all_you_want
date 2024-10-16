@@ -83,3 +83,12 @@ s_lead.encode('utf-8')
 
 s_use = "作用"
 s_use.encode('utf-8')
+
+s_mean = "含义"
+s_mean.encode('utf-8')
+
+s_mic = "微观"
+s_mic.encode('utf-8')
+
+s_mac = "宏观"
+s_mic.encode('utf-8')

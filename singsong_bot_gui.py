@@ -115,7 +115,7 @@ class ChatbotApp(QWidget):
         if user_input:
             self.chat_area.append("You （用户）: " + user_input)
             response = chatbot_S.respond(user_input)
-            self.chat_area.append("Singsong Bot （歌唱家模式聊天机器人）: " + response)
+            self.chat_area.append("Singsong Bot （歌唱家模式聊天机器人）: \n" + response)
             self.input_area.clear()
 
 
