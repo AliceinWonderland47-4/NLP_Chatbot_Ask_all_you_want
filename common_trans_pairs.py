@@ -81,3 +81,5 @@ s_str.encode('utf-8')
 s_lead = "领导"
 s_lead.encode('utf-8')
 
+s_use = "作用"
+s_use.encode('utf-8')
