@@ -1,5 +1,5 @@
 """
-professional_bot.py
+professional_bot_gui.py
 专业模式的聊天机器人实现 Chatbot implementation in professional mode
 使用图形用户接口 Using the Graphical User Interface
 作者：李 奕辰 Author: Yichen Li
@@ -18,7 +18,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QTextEdi
 pairs_professional = [
     # 1、A-阿姆达尔定律（Amdahl's Law）
     [
-        r"(.*)Amdahl's Law(.*)",
+        r"(.*)[Aa]mdahl's [Ll]aw(.*)",
         ["In computer architecture, Amdahl's law (or Amdahl's argument)\n"
          "is a formula which gives the theoretical speedup in latency of\n"
          "the execution of a task at fixed workload that can be expected\n"
@@ -26,7 +26,7 @@ pairs_professional = [
          "The law can be stated as:\n"
          "the overall performance improvement gained by optimizing a single\n"
          "part of a system is limited by the fraction of time that the improved\n"
-         "part is actually used"]
+         "part is actually used."]
     ],
     [
         "(.*)" + s_Amdahl + "(.*)",
@@ -162,6 +162,12 @@ pairs_professional = [
         "(.*)" + s_lead + "(.*)" + s_con + "(.*)",
         [
             "领导是指指挥、带领、引导和鼓励部下为实现目标而努力的过程。"
+        ]
+    ],
+    [
+        "(.*)" + s_lead + "(.*)" + s_use + "(.*)",
+        [
+            "领导的作用包括：指挥作用、协调作用和激励作用。"
         ]
     ],
 
@@ -301,7 +307,11 @@ class ChatbotApp(QWidget):
         self.chat_area.setText(
             "In professional mode, I can answer your questions about computer science and economics terminology, \n"
             "recite the periodic table, calculate pi, and more.\n"
-            "在专业模式下，我可以为你解答有关计算机科学和经济学专业名词的问题，背诵元素周期表，计算圆周率（pi）等等。\n")
+            "在专业模式下，我可以为你解答有关计算机科学和经济学专业名词的问题，背诵元素周期表，计算圆周率（pi）等等。\n"
+            "Type your question in the blank box below and click the 'Send' button.\n"
+            "在下方的空白框内输入你的问题，然后点击‘发送’按钮。\n"
+            "Example question in English: What is Amdahl's law?\n"
+            "中文问题示例：管理的职能有哪些？")
         self.layout.addWidget(self.chat_area)
 
         self.input_area = QTextEdit(self)
@@ -318,7 +328,7 @@ class ChatbotApp(QWidget):
         if user_input:
             self.chat_area.append("You （用户）: " + user_input)
             response = chatbot_P.respond(user_input)
-            self.chat_area.append("Professional Bot （专业模式聊天机器人）: " + response)
+            self.chat_area.append("Professional Bot （专业模式聊天机器人）: \n" + response)
             self.input_area.clear()
 
 
