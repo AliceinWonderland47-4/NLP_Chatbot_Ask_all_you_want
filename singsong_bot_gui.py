@@ -1,5 +1,5 @@
 """
-singsong_bot.py
+singsong_bot_gui.py
 歌唱家模式的聊天机器人实现 Chatbot implementation in singsong mode
 使用图形用户接口 Using the Graphical User Interface
 作者：李 奕辰 Author: Yichen Li
@@ -19,61 +19,104 @@ from professional_trans_pairs import *
 pairs_singsong = [
     # 1、《Staying Alive -- Bee Gees》
     [
-        r"(.*)Staying Alive(.*)",
-        ["Whether you're a brother or whether you're a mother/\n"
-         "You're stayin' alive stayin' alive/\n"
-         "Feel the city breakin' and everybody shakin'/\n"
-         "And we're stayin' alive stayin' alive/\n"
-         "Ah ha ha ha stayin' alive stayin' alive/\n"
-         "Ah ha ha ha stayin' alive/"]
+        r"(.*)[Ss]taying [Aa]live(.*)",
+        [
+            "Whether you're a brother or whether you're a mother/\n"
+            "You're stayin' alive stayin' alive/\n"
+            "Feel the city breakin' and everybody shakin'/\n"
+            "And we're stayin' alive stayin' alive/\n"
+            "Ah ha ha ha stayin' alive stayin' alive/\n"
+            "Ah ha ha ha stayin' alive/"
+        ]
     ],
     # 2、《Style -- Taylor Swift -- 1989》
     [
-        r"(.*)Style(.*)",
-        ["You got that James Dean daydream look in your eye/\n"
-         "And I got that red lip classic thing that you like/\n"
-         "And when we go crashing down we come back every time/\n"
-         "'Cause we never go out of style/\n"
-         "We never go out of style/"]
+        r"(.*)[Ss]tyle(.*)",
+        [
+            "You got that James Dean daydream look in your eye/\n"
+            "And I got that red lip classic thing that you like/\n"
+            "And when we go crashing down we come back every time/\n"
+            "'Cause we never go out of style/\n"
+            "We never go out of style/"
+        ]
     ],
     # 3、《I hate myself for loving you -- Joan Jett》
     [
         r"(.*)I [Hh]ate [Mm]yself [Ff]or [Ll]oving [Yy]ou(.*)",
-        ["I think of you every night and day/\n"
-         "You took my heart and you took my pride away/\n"
-         "I hate myself for loving you/\n"
-         "Can't break free from the things that you do/\n"
-         "I wanna walk but I run back to you that's why/\n"
-         "I hate myself for loving you/"]
+        [
+            "I think of you every night and day/\n"
+            "You took my heart and you took my pride away/\n"
+            "I hate myself for loving you/\n"
+            "Can't break free from the things that you do/\n"
+            "I wanna walk but I run back to you that's why/\n"
+            "I hate myself for loving you/"
+        ]
     ],
     # 4、《Play that funky music -- Wild Cherry》
     [
         r"(.*)[Pp]lay [Tt]hat [Ff]unky [Mm]usic(.*)",
-        ["When they were singin' and dancin' and movin' to the groovin'/\n"
-         "And just when it hit me somebody turned around and shouted/\n"
-         "Play that funky music white boy/\n"
-         "Play that funky music right/"]
+        [
+            "When they were singin' and dancin' and movin' to the groovin'/\n"
+            "And just when it hit me somebody turned around and shouted/\n"
+            "Play that funky music white boy/\n"
+            "Play that funky music right/"
+        ]
     ],
     # 5、《改革春风吹满地》
     [
         s_ggcf,
-        ["人是衣，马是鞍/\n"
-         "一看长相二看穿/\n"
-         "白天想，夜里哭/\n"
-         "做梦都想去首都/\n"
-         "俩脚离地了/\n"
-         "病毒就关闭了/\n"
-         "啥都上不去了/\n"
-         "嚎，嗷/\n"
-         "改革春风吹满地/\n"
-         "中国人民真争气/\n"
-         "这个世界太疯狂/\n"
-         "耗子都给猫当伴娘/\n"
-         "齐德隆，齐东强，合一/\n"
-         "齐德隆的咚的隆咚锵/"]
+        [
+            "人是衣，马是鞍/\n"
+            "一看长相二看穿/\n"
+            "白天想，夜里哭/\n"
+            "做梦都想去首都/\n"
+            "俩脚离地了/\n"
+            "病毒就关闭了/\n"
+            "啥都上不去了/\n"
+            "嚎，嗷/\n"
+            "改革春风吹满地/\n"
+            "中国人民真争气/\n"
+            "这个世界太疯狂/\n"
+            "耗子都给猫当伴娘/\n"
+            "齐德隆，齐东强，合一/\n"
+            "齐德隆的咚的隆咚锵/"
+        ]
     ],
-    # # 6、《》
-    # []
+    # 6、《Starboy -- The Weeknd/Daft Punk》
+    [
+        "[Ss]tarboy",
+        [
+            "Ha-ha-ha-ha-ha ha-ha-ha-ha-ha/\n"
+            "Look what you've done/\n"
+            "Ha-ha-ha-ha-ha ha-ha-ha-ha-ha/\n"
+            "I'm a motherf**kin' starboy/\n"
+            "Ha-ha-ha-ha-ha ha-ha-ha-ha-ha/\n"
+            "Look what you've done/\n"
+            "Ha-ha-ha-ha-ha ha-ha-ha-ha-ha/\n"
+            "I'm a motherf**kin' starboy/\n"
+        ]
+    ],
+    # 7、《Danza Kuduro -- Don Omar/Lucenzo》
+    [
+        "[Dd]anza [Kk]uduro",
+        [
+            "La manos arriba cintura sola/\n"
+            "Da media vuelta Danza Kuduro/\n"
+            "No te canses ahora que esto solo empieza/\n"
+            "Mueve la cabeza Danza Kuduro/"
+        ]
+    ],
+    # 8、《Goodnight Moon -- Shivaree》
+    [
+        "[Gg]oodnight [Mm]oon",
+        [
+            "What should I do I'm just a little baby/\n"
+            "What if the lights go out and maybe/\n"
+            "And then the wind just starts to moan/\n"
+            "Outside the door he followed me home/\n"
+            "Well goodnight moon/"
+        ]
+    ]
 
 ]
 
