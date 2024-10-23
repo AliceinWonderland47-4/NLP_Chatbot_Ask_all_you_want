@@ -1,5 +1,5 @@
 """
-greeting_bot.py
+greeting_bot_gui.py
 问候模式的聊天机器人实现 Chatbot implementation in greeting mode
 使用图形用户接口 Using the Graphical User Interface
 作者：李 奕辰 Author: Yichen Li
@@ -17,7 +17,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QTextEdi
 pairs_greeting = [
     # 1、用户（“我”）的名字
     [
-        r"(.*) [Mm]y [Nn]ame [Ii]s_name (.*)",  # 适配短语my name is（我的名字是）
+        r"(.*)[Mm]y [Nn]ame [Ii]s(.*)",  # 适配短语my name is（我的名字是）
         ["Hello, how can I assist you today?"]
     ],
     [
@@ -36,26 +36,25 @@ pairs_greeting = [
     # 3、（你）怎么样
     [
         r"(.*)[Hh]ow [Aa]re [Yy]ou(.*)?",  # 提取'how are you'（你怎么样），适配大小写习惯
-        ["I'm just a bunch of code, but thanks for asking!\n"
-         "我只是一堆代码，但还是感谢您的询问！",
-         "Doing well, how about you?\n"
-         "还好吧，你呢？"]
+        [
+            "I'm just a bunch of python code, but thanks for asking!\n",
+            "Doing well, how about you?\n"
+        ]
     ],
     [
-        r"(.*)[Hh]ow [Aa]re [Yy]ou(.*)?",  # 提取'how are you'（你怎么样），适配大小写习惯
-        ["I'm just a bunch of code, but thanks for asking!\n"
-         "我只是一堆代码，但还是感谢您的询问！",
-         "Doing well, how about you?\n"
-         "还好吧，你呢？"]
+        "(.*)" + s_how + "(.*)",  # 提取'how are you'（你怎么样），适配大小写习惯
+        [
+             "我只是一堆python代码，但还是感谢您的询问！",
+             "还好吧，你呢？"]
     ],
     # 4、用户询问chatbot名字
     [
         r"(.*)[Yy]our [Nn]ame(.*)",  # 提取词组 your name（你的名字）
         ["I am a chatbot created using NLTK!\n"]
     ],
-    # TODO: 中文输入的问题？
+    # TODO: 中文输入的问题？（已解决）
     [
-        "(.*)" + s_you + "(.*)" + s_name + "(.*)",
+        "(.*)" + s_your + "(.*)" + s_name + "(.*)",
         ["我是使用 NLTK 创建的聊天机器人。"]
     ],
     # 5、戴夫问好
