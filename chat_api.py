@@ -1,31 +1,41 @@
 """
 chat_api.py
 聊天功能的接口 Chat interface
+程序运行和测试入口 Program running and test entry
 作者：李 奕辰 Author: Yichen Li
 """
+
 import random
 
 # 导入相关模块 Import related modules
 # NLTK自然语言处理库 NLTK Natural Language Processing Library
 import nltk
+
 # 7种功能模式 7 function modes
-# 1、问候模式
+
+# 1、问候模式 Greeting Mode
 from greeting_bot import *
 from greeting_bot_gui import *
-# 2、闲聊模式
+
+# 2、闲聊模式 Chitchat Mode
 from chitchat_bot import *
 from chitchat_bot_gui import *
+
 # 3、专业模式
 from professional_bot import *
 from professional_bot_gui import *
 
+# 4、胡言乱语模式
 from nonsense_bot import *
 
-# 歌唱家模式
+# 5、歌唱家模式
 from singsong_bot import *
 from singsong_bot_gui import *
+
+# 6、长者模式
 from elderly_bot import *
-# 新闻模式
+
+# 7、新闻模式
 from news_bot import *
 from news_bot_gui import *
 
@@ -122,8 +132,8 @@ def chatbot_start():
 
     # C键：闲聊模式 chitchat mode
     elif key == 'C' or key == 'c':
-        print("You are now in chitchat mode.\n"
-              "您已进入闲聊模式。\n")
+        print("You are now in chitchat mode. Please pay attention to the pop-up window.\n"
+              "您已进入闲聊模式。请留意弹出的窗口。\n")
         # chatbot_C.converse()  # 旧版本，纯终端输入/输出 Old version, pure terminal input/output
         chitchat_bot_start()  # 新版本，增加了GUI New version, added GUI
 
