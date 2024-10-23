@@ -1,5 +1,5 @@
 """
-chitchat_bot.py
+chitchat_bot_gui.py
 闲聊模式的聊天机器人实现 Chatbot implementation in chitchat mode
 使用图形用户接口 Using the Graphical User Interface
 作者：李 奕辰 Author: Yichen Li
@@ -18,7 +18,7 @@ from PyQt5 import QtGui
 pairs_chitchat = [
     # 1、讲笑话 Tell jokes
     [
-        r"(.*)tell(.*)joke(.*)",
+        r"(.*)[Tt]ell(.*)[Jj]oke(.*)",
         ["Why did the scarecrow win an award?\n"
          "Because he was outstanding in his field!"]
     ],
@@ -144,7 +144,7 @@ class ChatbotApp(QWidget):
         if user_input:
             self.chat_area.append("You （用户）: " + user_input)
             response = chatbot_C.respond(user_input)
-            self.chat_area.append("Chitchat Bot （闲聊模式聊天机器人）: " + response)
+            self.chat_area.append("Chitchat Bot （闲聊模式聊天机器人）: \n" + response)
             self.input_area.clear()
 
 
