@@ -24,6 +24,9 @@ s_you.encode('utf-8')
 s_hello = "你好"
 s_hello.encode('utf-8')
 
+s_how = "怎么样"
+s_how.encode('utf-8')
+
 s_tell = "讲"
 s_tell.encode('utf-8')
 
@@ -92,3 +95,15 @@ s_mic.encode('utf-8')
 
 s_mac = "宏观"
 s_mic.encode('utf-8')
+
+s_debt = "负债"
+s_debt.encode('utf-8')
+
+s_bus = "业务"
+s_bus.encode('utf-8')
+
+s_type = "风格类型"
+s_type.encode('utf-8')
+
+s_acc = "会计"
+s_acc.encode('utf-8')
