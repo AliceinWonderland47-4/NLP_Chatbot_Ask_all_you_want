@@ -1,5 +1,5 @@
 """
-common_trans_pairs.py
+文件名：common_trans_pairs.py
 定义了一些常见翻译对 Some common translation pairs are defined
 均使用utf-8编码 All use utf-8 encoding
 作者：李 奕辰 Author: Yichen Li
@@ -107,3 +107,16 @@ s_type.encode('utf-8')
 
 s_acc = "会计"
 s_acc.encode('utf-8')
+
+s_heart = "失恋"
+s_heart.encode('utf-8')
+
+s_comf = "安慰"
+s_comf.encode('utf-8')
+
+s_beau = "美丽的"
+s_beau.encode('utf-8')
+
+s_sentence = "句子"
+s_sentence.encode('utf-8')
+

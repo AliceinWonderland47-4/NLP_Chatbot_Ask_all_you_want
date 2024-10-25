@@ -88,6 +88,36 @@ pairs_chitchat = [
          "在黑暗中，她听到身后传来一声轻声低语：“你不该来的。”\n"
          "无路可走的莎拉感到一只冰冷的手抓住了她的肩膀。"]
     ],
+    [
+        r"(.*)heartbroken(.*)comfort(.*)",
+        [
+            "Don't try to chase a missed horse. Use the time you spend\n"
+            "chasing the horse to plant grass. The horse will come naturally\n"
+            "when the spring comes. The same principle applies to a broken heart."
+        ]
+    ],
+    [
+        "(.*)" + s_heart + "(.*)" + s_comf + "(.*)",
+        [
+            "不要试图去追一匹错过的马，用追马的时间去种草，来年春暖花开，骏马自然会来。同样的道理，也适用于失恋。"
+        ]
+    ],
+    [
+        "(.*)" + s_beau + "(.*)" + s_sentence + "(.*)",
+        [
+            "听一场雨，雨碎江南；看一场雪，雪漫西山；吹一场风，风吹河畔；\n"
+            "误一场缘，缘尽情散；唱一场戏，戏落泪干；醉一场酒，酒醒夜寒。"
+        ]
+    ],
+    [
+        r"(.*)beautiful sentence(.*)",
+        [
+            "Listen to a rain, the rain shatters the south of the Yangtze River;\n"
+            "watch a snow, the snow covers the western mountains; blow a wind, \n"
+            "the wind blows by the river; miss a fate, the fate is gone; sing a play,\n"
+            "the tears dry; get drunk, the night is cold when you wake up."
+        ]
+    ],
 
     # 退出操作 Exit Operation
     [

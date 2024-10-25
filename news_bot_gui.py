@@ -1,5 +1,5 @@
 """
-news_bot_gui.py
+文件名 file name：news_bot_gui.py
 新闻模式的聊天机器人实现 Chatbot implementation in news mode
 使用图形用户接口 Using the Graphical User Interface
 作者：李 奕辰 Author: Yichen Li
@@ -43,6 +43,15 @@ pairs_news_dom = [
             "On November 30, 2023, the Central Propaganda Department awarded the\n"
             "Baota Fire Rescue Station in Baota District, Yan'an City, Shaanxi Province\n"
             "the title of 'Model of the Times'."
+        ]
+    ],
+    [
+        "2023/12/24",
+        [
+            "12月24日，国产首艘大型邮轮“爱达·魔都号”在上海吴淞口国际邮轮港离港出海，进行首次试运营。\n"
+            "On December 24, the first domestically-produced large cruise ship\n"
+            "'Aida Magic City' left the Shanghai Wusongkou International Cruise Port\n"
+            "for its first trial operation."
         ]
     ],
     [
