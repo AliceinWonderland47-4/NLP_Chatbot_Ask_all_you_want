@@ -55,6 +55,21 @@ pairs_news_dom = [
         ]
     ],
     [
+        "2024/02/01",
+        [
+            "2024年2月1日，世界最大跨径拱桥——南丹至天峨下老高速公路天峨龙滩特大桥建成通车，\n"
+            "这也是世界首座跨径超600米的拱桥。天峨龙滩特大桥位于广西壮族自治区河池市天峨县\n"
+            "龙滩大坝上游6公里处，主桥为上承式劲性骨架混凝土拱桥。\n"
+            "On February 1, 2024, the world's largest span arch bridge, the Tian'e\n"
+            "Longtan Bridge on the Nandan-Tian'e Xia Lao Expressway, was completed\n"
+            "and opened to traffic. It is also the world's first arch bridge with\n"
+            "a span of over 600 meters. The Tian'e Longtan Bridge is located 6 kilometers\n"
+            "upstream of the Longtan Dam in Tian'e County, Hechi City, Guangxi Zhuang\n"
+            "Autonomous Region. The main bridge is a top-bearing rigid skeleton concrete\n"
+            "arch bridge."
+        ]
+    ],
+    [
         "2024/03/03",
         [
             "2024年3月3日，2024跳水世界杯蒙特利尔站比赛在加拿大蒙特利尔奥林匹克中心游泳馆落幕。\n"
@@ -116,6 +131,18 @@ pairs_news_int = [
         ]
     ],
     [
+        "2023/11/02",
+        [
+            "俄罗斯总统普京于11月2日签署了俄《战时状态法》和《紧急状态法》的修正案，俄罗斯将不再向欧洲\n"
+            "委员会秘书长通报俄罗斯实施、取消战时状态或紧急状态的情况，保留对联合国秘书长的相应通报机制。\n"
+            "Russian President Vladimir Putin signed amendments to Russia's Law on State\n"
+            "of War and Law on State of Emergency on November 2. Russia will no longer\n"
+            "report to the Secretary-General of the Council of Europe on the implementation\n"
+            "or cancellation of the state of war or state of emergency in Russia, but will\n"
+            "retain the corresponding notification mechanism for the Secretary-General of the United Nations."
+        ]
+    ],
+    [
         "2024/04/01",
         [
             "4月1日下午，国家主席习近平在北京人民大会堂同印尼当选总统普拉博沃举行会谈。中印尼关系取得宝贵成就，\n"
@@ -152,12 +179,23 @@ class ChatbotApp_D(QWidget):
         font.setPointSize(18)  # 括号里的数字可以设置成自己想要的字体大小
         self.setWindowTitle("Chatbot(Domestic News)")
         self.setGeometry(100, 100, 400, 300)
+        # self.setStyleSheet("QWidget { background-image: url('J:\Source_Code（源代码）\EE 6405 Natural Language Processing_自然语言处理\Final_Project_期末项目\images\dom_news.jpg'); }")
         # self.setFont()
         # self.font().Bold()
+        # self.setStyleSheet("""
+        #             QWidget {
+        #                 background-image: url('J:\Source_Code（源代码）\EE 6405 Natural Language Processing_自然语言处理\Final_Project_期末项目\images\dom_news.jpg');
+        #                 background-repeat: no-repeat;
+        #                 background-position: center;
+        #                 background-color: lightgray;  /* Fallback color */
+        #             }
+        #         """)
         self.layout = QVBoxLayout()
         self.setFont(font)
+        self.autoFillBackground()
         self.chat_area = QTextEdit(self)
         self.chat_area.setReadOnly(True)
+        # self.chat_area.
         self.chat_area.setText(
             "I provide you with the latest domestic current affairs news.\n"
             "Just enter the date (format: YYYY/MM/DD) to search.\n"
