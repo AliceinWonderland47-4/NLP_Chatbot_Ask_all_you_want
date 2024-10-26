@@ -57,11 +57,17 @@ You can ask:
 17、Etc(todo)
 
 --------------  歌唱家模式 Singsong Mode  --------------
+
 1、Staying Alive
+
 2、Style
+
 3、I hate myself for loving you
+
 4、Play that funky music
+
 5、改革春风吹满地
+
 6、Starboy
 7、Danza Kuduro
 8、Goodnight Moon
@@ -78,16 +84,22 @@ You can ask:
 
 4、2023/12/24
 
-5、2024/03/03
+5、2024/02/01
 
-6、2024/04/01
+6、2024/03/03
 
-7、2024/04/09
+7、2024/04/01
+
+8、2024/04/09
 
 国际新闻 International News
+
 1、2023/10/16
+
 2、2023/10/30
+
 3、2024/04/01
+
 4、2024/04/06
 
 
@@ -96,4 +108,5 @@ You can ask:
 
 
 如果在Pycharm中无法运行，请移步Windows Powershell。
+
 If it doesn't work in Pycharm, please move to Windows Powershell.
