@@ -11,6 +11,7 @@ import random
 # NLTK自然语言处理库 NLTK Natural Language Processing Library
 import nltk
 
+from mentalhealthchatbot import *
 # 7种功能模式 7 function modes
 
 # 1、问候模式 Greeting Mode
@@ -39,6 +40,7 @@ from elderly_bot import *
 from news_bot import *
 from news_bot_gui import *
 
+from linux_bot_gui import *
 # 字典
 from dic_1 import *
 
@@ -55,6 +57,8 @@ def chatbot_start():
           "今天想做些什么呢？\n"
           "1. To enter 'Greeting' mode, press the G/g key.\n"
           "1. 要进入 问候模式，请按G/g键\n"
+          "2. To enter the 'Mental Health Assistant' mode, press the E/e key\n"
+          "2. 要进入 心理健康助手模式，请按M/m键\n"
           "2. To enter 'Chitchat' mode, press the C/c key.\n"
           "2. 要进入 闲聊模式，请按C/c键\n"
           "3. To enter 'Singsong' mode, press the S/s key.\n"
@@ -69,8 +73,8 @@ def chatbot_start():
           "7. 要进入 新闻查询模式，请按W/w键\n"
           "8. Furthermore, if you want to hear some gibberish, press the N/n key\n"
           "8. 此外，想听点胡言乱语，请按N/n键\n"
-          "9. Toad of truth, press the E/e key\n"
-          "9. O-O，请按E/e键\n"
+          "9. To query Linux command functions, press the L/l key\n"
+          "9. 进行 Linux 命令功能查询，请按L/l键\n"
           "Type 'quit' to exit\n"
           "打出 'quit' 或“退出”来退出")
 
@@ -88,6 +92,7 @@ def chatbot_start():
             else:
                 print(s + "儿")
 
+    # T键：起名助手模式
     elif key == 'T' or key == 't':
         print("You are now in greeting mode.\n"
               "您已进入起名助手模式。\n"
@@ -95,7 +100,7 @@ def chatbot_start():
               "在起名助手模式下，告诉我您家宝宝的姓氏，我给您起名字（3字）。")
         while True:
             surname = str(input("请输入姓氏："))
-            if surname == "quit":
+            if surname == "quit" or surname == "退出":
                 return 0
             else:
                 i1 = random.randint(0, 30)
@@ -151,6 +156,34 @@ def chatbot_start():
               "瞹澀奪祓瀔鹖佶，筐囖蓻釁湹悑腝玟。")
         chatbot_N.converse()
 
+    # M/m键：心理健康（情感分类）模式 todo
+    elif key == 'M' or key == 'm':
+        sentence = str(input("Please state your feelings.\n"
+                             "请简单描述一下你的感受。"))
+        # Print the original labels along with raw outputs for each sentence
+        print("Input Sentence:", sentence)
+        preprocessed_sentence = preprocess(sentence)
+        predicted_label, raw_output = model1.predict([preprocessed_sentence])
+        print("Predicted Numeric Label:", predicted_label)
+        original_label = le.inverse_transform(predicted_label)
+        print("Original Predicted Label:", original_label)  # Display the original status label
+        print("Raw Outputs:", raw_output)  # Display raw outputs (if needed)
+        # todo: 回应
+        if predicted_label == 0:
+            pass
+        elif predicted_label == 1:
+            pass
+        elif predicted_label == 2:
+            pass
+        elif predicted_label == 3:
+            pass
+        elif predicted_label == 4:
+            pass
+        elif predicted_label == 5:
+            pass
+        elif predicted_label == 6:
+            pass
+
     # S键：歌唱家模式 singsong mode
     elif key == 'S' or key == 's':
         print("You are now in singsong mode. Please pay attention to the pop-up window.\n"
@@ -164,6 +197,12 @@ def chatbot_start():
               "O-O O-O O-O O-O\n"
               " =   =   =   = ")
         chatbot_E.converse()
+
+    elif key == 'L' or key == 'l':
+        print("You have entered the Linux command query mode.\n"
+              "您已进入Linux命令查询模式。")
+        # todo: Linux命令查询功能
+        linux_bot_start()   #
 
     else:
         print("Sorry, please try again.\n"
